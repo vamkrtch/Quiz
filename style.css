@@ -72,6 +72,5 @@ button:focus {
 
 .path {
   text-decoration: none;
-  background-color: #e07789;
-  align-self: center;
+  color: #ffffff;
 }
