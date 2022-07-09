@@ -66,7 +66,7 @@ submitBtn.addEventListener('click', () => {
         } else {
             quiz.innerHTML = `
                 <h2>Thank you for your answer. Good luck in your journey.</h2>
-                <a href = "labs.tumo.world" class = "path">Go to path</a>
+                <button>><a href = "labs.tumo.world" class = "path">Go to path</a></button>
             `
         }
     }
