@@ -2,27 +2,36 @@ const quizData = [
     {
         question: "Who Are you?",
         a: "Vahan",
-        b: "Milena",
-        c: "Mareta",
-        d: "Amir",
-        correct: "a",
+        b: "Amir",
+        c: "Marieta",
+        d: "Milena",
+        correct: "Vahan",
     },
-  
 ];
 
 const quiz = document.getElementById('quiz')
 const answerEls = document.querySelectorAll('.answer')
 const questionEl = document.getElementById('question')
+
 const a_text = document.getElementById('a_text')
 const b_text = document.getElementById('b_text')
 const c_text = document.getElementById('c_text')
 const d_text = document.getElementById('d_text')
-const submitBtn = document.getElementById('submit')
+
+let buttonArr = [];
+
+const vahan = document.getElementById('a');
+const amir = document.getElementById('b');
+const marieta = document.getElementById('c');
+const milena = document.getElementById('d');
+
+buttonArr[0] = vahan;
+buttonArr[1] = amir;
+buttonArr[2] = marieta;
+buttonArr[3] = milena;
 
 let currentQuiz = 0
 let score = 0
-
-loadQuiz()
 
 function loadQuiz() {
     deselectAnswers()
@@ -41,7 +50,7 @@ function deselectAnswers() {
 }
 
 function getSelected() {
-    let answer
+    let answer;
 
     answerEls.forEach(answerEl => {
         if(answerEl.checked) {
@@ -52,15 +61,17 @@ function getSelected() {
     return answer
 }
 
-submitBtn.addEventListener('click', () => {
-    const answer = getSelected()
+function onClick () {
+    // const answer = getSelected()
+    const answer = this.innerHTML;
+    // console.log(answer);
 
     if(answer) {
         if(answer === quizData[currentQuiz].correct) {
-            score++
+            score++;
         }
 
-        currentQuiz++
+        currentQuiz++;
 
         if(currentQuiz < quizData.length) {
             loadQuiz()
@@ -71,4 +82,28 @@ submitBtn.addEventListener('click', () => {
             `
         }
     }
-})
+}
+
+for (let i = 0; i < buttonArr.length; i++)
+    buttonArr[i].addEventListener('click', onClick);
+
+// submitBtn.addEventListener('click', () => {
+//     const answer = getSelected()
+
+//     if(answer) {
+//         if(answer === quizData[currentQuiz].correct) {
+//             score++
+//         }
+
+//         currentQuiz++
+
+//         if(currentQuiz < quizData.length) {
+//             loadQuiz()
+//         } else {
+//             quiz.innerHTML = `
+//                 <h2>You answered ${score}/${quizData.length} questions correctly</h2>
+//                 <button onclick="location.reload()">Reload</button>
+//             `
+//         }
+//     }
+// })
