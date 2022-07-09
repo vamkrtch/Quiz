@@ -1,10 +1,9 @@
 const quizData = [
     {
-        question: "Who Are you?",
-        a: "Vahan",
-        b: "Milena",
-        c: "Mareta",
-        d: "Amir",
+        question: "Which station do you prefer?",
+        a: "Python",
+        b: "Js",
+        c: "ML",
         correct: "a",
     },
   
