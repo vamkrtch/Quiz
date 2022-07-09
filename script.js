@@ -2,8 +2,8 @@ const quizData = [
     {
         question: "Which station do you prefer?",
         a: "Python",
-        b: "Js",
-        c: "ML",
+        b: "JavaScript",
+        c: "Machine Learning",
         correct: "a",
     },
   
@@ -66,7 +66,7 @@ submitBtn.addEventListener('click', () => {
         } else {
             quiz.innerHTML = `
                 <h2>Thank you for your answer. Good luck in your journey.</h2>
-                <button onclick="location.reload()">Reload</button>
+                <a href = "labs.tumo.world">Go to path</a>
             `
         }
     }
